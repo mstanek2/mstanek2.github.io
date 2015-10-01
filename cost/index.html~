@@ -1,0 +1,68 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>{{ headline }}</h1>
+    <h3>{{ subhead }}</h3>
+    <img src="{{ image }}" width="200px"/>
+
+	<h3 class="sub-header">Top Three Big Ten Institutions for Graduation</h3>
+      <strong>University of Nebraska has a 65% Graduation Rate</strong>. 
+      <div class="row">
+	{% for row in chart %}
+        <div class="col-md-4">{{ row.column1 }}</div>
+        <div class="col-md-4">{{ row.column2 }}</div>
+        <div class="col-md-4">{{ row.column3 }}</div>
+      </div>{% endfor %}
+
+	<h2 class="sub-header">Fuck You Yankee Bluejeans</h2>
+	<div class="table-responsive">
+		<table class="table table-striped">
+		 <thead>
+		  <tr>
+		   <th>Big Ten Schools</th>
+		   <th>Graduation Percentage</th>
+		   <th>In-state Tuition</th>
+		   <th>Out-state Tuition</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  {% for row in table %}<tr>
+			<td>{{ row.column1 }}</td>
+			<td>{{ row.column2 }}</td>
+			<td>{{ row.column3 }}</td>
+			<td>{{ row.column4 }}</td>
+     					</tr>{% endfor %}
+
+		</tbody>
+	      </table>
+	    </div>
+
+         <h2 class="sub-header">In and Out of State Tuition for Big Ten Schools</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Big Ten Schools</th>
+                  <th>In-State Tuition</th>
+		  <th>Out-State Tuition</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in data %}<tr>
+                  <td>{{ row.column1 }}</td>
+                  <td>{{ row.column2 }}</td>
+		  <td>{{ row.column3 }}</td>
+                                  </tr>{% endfor %}
+    
+              </tbody>
+            </table>
+          </div>
+
+
+
+</div>
+</div>
+{% endblock content %}
+
